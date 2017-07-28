@@ -9,7 +9,7 @@ class hyperv(
   if $::osfamily == 'Windows' {
     anchor{'hyperv::begin':}
     -> class{'::hyperv::install':}
-    #-> class{'::hyperv::config':}
+    -> class{'::hyperv::config':}
     ~> class{'::hyperv::service':}
     -> anchor{'hyperv::end':}
   } else {
